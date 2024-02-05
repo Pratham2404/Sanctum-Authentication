@@ -21,7 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // To access URL only by using token
 Route::group(['middleware'=>'auth:sanctum'],function(){
+    Route::get('allUsers',[Usercontroller::class,'getAllUsers']);
     Route::get('logout',[Usercontroller::class,'logout']);
+    Route::get('',function(){
+        echo 'hi';  
+    });
 
 });
 

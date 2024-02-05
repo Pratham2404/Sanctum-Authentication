@@ -43,6 +43,11 @@ class Usercontroller extends Controller
         // dd($response);
         return response($response,201);
     }
+
+    function getAllUsers(){
+        $users = User::all();
+        return $users;
+    }
     function logout(Request $request)
     {
         try {
